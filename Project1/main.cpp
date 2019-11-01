@@ -10,7 +10,9 @@ void function_1()
 
 int main()
 {
-	function_1();
-
+	//function_1();
+	std::thread T1(function_1); //t1 starts running
+	T1.join(); //main thread waits for t1 to finish
+	T1.detach(); //t1 will freely  on its own -- daemon process
 	return 0;
 }
